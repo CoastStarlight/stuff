@@ -1,0 +1,53 @@
+<html>
+    <body>
+        
+        <h1>chopsticks</h1>
+        <h2>oponents hand</h2>
+        <h2 id="op">1     1</h2>
+        <h2>ur hand<h2>
+        <h2 id="up">1     1</h2>
+        
+        <script>
+var ohl = 1;
+            var ohr = 1;
+            var phl = 1;
+            var phr = 1;
+            var httf;
+            var htat;
+            function ShowHands() {
+                document.getElementById("op").innerHTML = ohl + "     " + ohr;
+                document.getElementById("up").innerHTML = phl + "     " + phr;
+            };
+            function TakeTurn() {
+                var Lor;
+                if(phl == 0) {Lor = "right"} else {if(phr == 0) {Lor = "left"} else{Lor = prompt("use left or right hand?")}};
+                if(Lor == "left") {httf = phl} else{httf = phr};if(ohl == 0) {Lor = "right"} else{if(ohr == 0) {Lor = "left"} else{Lor = prompt("add to left hand or right hand");
+                                                                                                                                  }};
+                if(Lor == "left") {htat = 0} else {htat = 1};
+                if(htat == 0) {ohl = ohl + httf} else{ohr = ohr + httf};
+                console.clear();
+                ShowHands();
+                remove();
+                setTimeout(() => {BotTurn();}, 2000);};
+            function BotTurn() {
+                var Lor = Math.round(Math.random());
+                if(Lor == 0) {httf = ohl;} else{httf = ohr};
+                if(ohl == 0) {httf = ohr} else{if(ohr == 0) {httf == ohl}};
+                Lor = Math.round(Math.random());
+                if(Lor == 0) {phl = phl + httf} else {phr = phr + httf};
+                console.clear();if(phl == 0) {phr = phr + httf} else{if(phr == 0) {phl = phl + httf}};
+                ShowHands();
+                setTimeout(() => {TakeTurn();}, 10);
+                remove();};
+            function remove() {if(ohl == 5) {ohl = 0};if(ohr == 5) {ohr = 0};
+                               if(phl == 5) {phl = 0};if(phr == 5) {phr = 0;};
+                               if(ohl > 5) {ohl = ohl - 5};
+                               if(ohr > 5) {ohr = ohr - 5};
+                               if(phl > 5) {phl = phl - 5};
+                               if(phr > 5) {phr = phr - 5;};
+                               if(ohl == 0 && ohr == 0) {alert("U WON !!!");stop()} else {if(phl == 0 && phr == 0) {alert("U LOST !!!");stop()}}};alert("game started!");
+            ShowHands();
+            setTimeout(() => {TakeTurn();}, 10000);
+        </script>
+    </body>
+</html>
