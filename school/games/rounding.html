@@ -1,0 +1,40 @@
+<html>
+    <style>
+        p {
+        font-family: verdana;
+        }
+        </style>
+    <body>
+        <p id="wut">what is...</p>
+        
+        <input type="text" id="myText" value="">
+        
+        <p id="score" class="score">score: 0<p>
+        
+        <button onclick="myFunction()">submit</button>
+
+        <script>
+            var score = 0
+            var x;
+            var v;
+            x = Math.random() * 10;
+            document.getElementById("wut").innerHTML = "what is " + x + " to the nearest 1"
+            function checknrepeat() {
+            if(Number(v) == Math.round(x)) {
+            score++;
+            } else {
+            score += -1;
+            }
+                document.getElementById("score").innerHTML = "score: " + score
+                x = Math.random() * 10;
+            document.getElementById("wut").innerHTML = "what is " + x + " to the nearest 1"
+                document.getElementById("myText").value = "";
+            }
+        function myFunction() {
+  v = document.getElementById("myText").value;
+            checknrepeat();
+}
+
+        </script>
+    </body>
+</html>
