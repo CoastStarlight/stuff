@@ -1,0 +1,48 @@
+<html>
+    <style>
+    h2 {
+        font-family: verdana;
+    }
+button {
+  background-color: lime;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: verdana;
+}
+        h2{
+            font-family: verdana;
+        }
+    </style>
+    <body>
+        <script>
+            var rpsp;
+            var rpso = Math.floor(Math.random() * 3);
+            var pc;
+            var oc;
+            function who() {
+                if(rpsp == 0) {pc = "rock"} else{if(rpsp == 1) {pc = "paper"} else {pc = "scissors"}};
+                if(rpso == 0) {oc = "rock"} else{if(rpso == 1) {oc = "paper"} else {oc = "scissors"}};
+                  document.getElementById("outcome").innerHTML = "u chose " + pc + ", and ur opponent chose " + oc;
+                setTimeout(() => {if(rpsp == 0 && rpso == 1) {alert("u lost  :(")} else{if(rpsp == 0 && rpso == 2) {alert("u won  :)")} else{if(rpsp == 1 && rpso == 0) {alert("u won  :)")} else{if(rpsp == 1 && rpso == 2) {alert("u lost  :(")} else{if(rpsp == 2 && rpso == 0) {alert("u lost  :(")} else{if(rpsp == 2 && rpso == 1) {alert("u won  :)")} else{if(rpso == rpsp) {alert("u tied :|")}}}}}}};}, 10);
+                rpso = Math.floor(Math.random() * 3);
+                console.log("reset");
+            }
+            console.log("game started!");
+        </script>
+        <button onclick="rpsp = 0;who();">rock</button>
+        
+        <button onclick="rpsp = 1;who();">paper</button>
+        
+        <button onclick="rpsp = 2;who();">scisors</button>
+        
+        <h2 id="outcome"></h2>
+      
+    </body>
+</html>
