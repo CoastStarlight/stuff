@@ -1,0 +1,43 @@
+<html>
+    <style>
+        p {
+        font-family: verdana;
+        }
+        </style>
+    <body>
+        <p id="wut">what is...</p>
+        
+        <input type="text" id="myText" value="">
+        
+        <p id="score" class="score">score: 0<p>
+        
+        <button onclick="myFunction()">submit</button>
+
+        <script>
+            var score = 0
+            var x;
+            var y;
+            var v;
+            x = Math.floor(Math.random() * 10) + 1;
+            y = Math.floor(Math.random() * 10) + 1;
+            document.getElementById("wut").innerHTML = "what is " + x + " - " + y
+            function checknrepeat() {
+            if(Number(v) == x - y) {
+            score++;
+            } else {
+            score += -1;
+            }
+                document.getElementById("score").innerHTML = "score: " + score
+                x = Math.floor(Math.random() * 10) + 1;
+            y = Math.floor(Math.random() * 10) + 1;
+            document.getElementById("wut").innerHTML = "what is " + x + " - " + y
+                document.getElementById("myText").value = "";
+            }
+        function myFunction() {
+  v = document.getElementById("myText").value;
+            checknrepeat();
+}
+
+        </script>
+    </body>
+</html>
