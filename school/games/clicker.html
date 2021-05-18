@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>math clicker</title>
+        </head>
+    <body>
+        <p id="eq">equ: 0<p>
+        <button onclick="add();">equ</button>
+        <p id="income">equ per: <p>
+        <button onclick="owned[0] += 1;burp(1);">buy type writer (10 equ)</button>
+        <p id="w"><p>
+        <button onclick="owned[1] += 1;burp(5);">buy computer (50 equ)</button>
+        <p id="c"><p>
+        <button onclick="owned[2] += 1;burp(10);">buy server (100 equ)</button>
+        <p id="s"><p>
+        <button onclick="owned[3] += 1;burp(50);">buy factory (500 equ)</button>
+        <p id="f"><p>
+        <script>
+            var numba = 5;
+            var equ = 0;
+            var owned = [0, 0, 0, 0]
+            display();
+            function display() {
+            document.getElementById("w").innerHTML = "typewriters: " + owned[0]
+            document.getElementById("c").innerHTML = "computers: " + owned[1]
+            document.getElementById("s").innerHTML = "server: " + owned[2]
+            document.getElementById("f").innerHTML = "factories: " + owned[3]
+            }
+            function add() {
+                var x = Math.ceil(Math.random() * 12)
+                display()
+                var y = Math.ceil(Math.random() * 12)
+                var ask = prompt("what is " + x + " x " + y)
+                if(ask == x * y && ask !== null) {
+                equ = equ + numba
+            document.getElementById("eq").innerHTML = "equ: " + equ
+                } else {
+                 alert("no")   
+                }
+                
+            }
+            function burp(n) {
+                if(equ >= n * 10) {
+                equ = equ - 10
+                numba += n
+                    display();
+                document.getElementById("eq").innerHTML = "equ: " + equ
+                document.getElementById("income").innerHTML = "equ per: " + numba
+                } else {
+                alert("not enough money")
+                }
+                }
+            </script>
+    </body>
+</html>
