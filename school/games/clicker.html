@@ -44,9 +44,20 @@ button {
             document.getElementById("f").innerHTML = "factories: " + owned[3]
             }
             function add() {
-                var x = Math.ceil(Math.random() * 12)
+                var x
+                var y
+                if(Math.round(Math.random()) = 0) {
+                x = Math.ceil(Math.random() * 12 * -1)
+                } else {
+                x = Math.ceil(Math.random() * 12)
+                }
+                
+                if(Math.round(Math.random()) = 0) {
+                y = Math.ceil(Math.random() * 12 * -1)
+                } else {
+                y = Math.ceil(Math.random() * 12)
+                }
                 display()
-                var y = Math.ceil(Math.random() * 12)
                 var ask = prompt("what is " + x + " x " + y)
                 if(ask == x * y && ask !== null) {
                 equ = equ + numba
